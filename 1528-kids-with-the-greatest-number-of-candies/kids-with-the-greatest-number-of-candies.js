@@ -12,12 +12,12 @@ var kidsWithCandies = function(candies, extraCandies) {
     ca.sort((a,b)=>b-a)
     let largest = ca[0]
     for(let i = 0;i<candies.length;i++){
-        // console.log(candies[i])
-        let check =candies[i]+extraCandies
+
+        let check = candies[i]+extraCandies
         if(check < largest){
-            // console.log(candies[i])
-            resultArr[i]=false
+          resultArr[i]=false
         }
+
     }
  
 return resultArr
