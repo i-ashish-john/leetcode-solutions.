@@ -14,8 +14,6 @@ var minElement = function(nums) {
     //         // console.log(sum)
     //     minSum = Math.min(minSum,sum);
     // }
-    let min = 0
-    let prev = 0
 
     for(let i = 0; i < nums.length; i++){
         let value = nums[i].toString()
