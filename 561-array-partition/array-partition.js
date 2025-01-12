@@ -7,6 +7,7 @@ var arrayPairSum = function(nums) {
     let result = 0
     for (let i = 0; i < nums.length; i += 2) {
         result += Math.min(nums[i], nums[i+1])
+        console.log(result)
     }
     return result
 }
