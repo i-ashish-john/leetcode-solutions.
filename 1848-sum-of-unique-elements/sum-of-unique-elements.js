@@ -15,7 +15,7 @@ var sumOfUnique = function(nums) {
         }
     }
     if(flag==true){
-        sum= sum+nums[i]
+        sum+=nums[i]
     }
     
   }
