@@ -4,29 +4,11 @@
  * @return {number[][]}
  */
 var findDifference = function(nums1, nums2) {
-    let main = [],r1=[],r2=[]
-    for(let n of nums1){
-        console.log(n)
-        if(!r1.includes(n)){
-
-        if(!nums2.includes(n)){
-            r1.push(n)
-        }
-
-        }
-    }
-
-    for(let m of nums2){
-
-        if(!r2.includes(m)){
-
-        if(!nums1.includes(m)){
-            r2.push(m)
-        }
-        
-        }
-        
-    }
-     main.push(r1,r2)
-    return main
+    const set1 = new Set(nums1);
+    const set2 = new Set(nums2);
+    
+    const diff1 = [...set1].filter(x => !set2.has(x));
+    const diff2 = [...set2].filter(x => !set1.has(x));
+    
+    return [diff1, diff2];
 };
