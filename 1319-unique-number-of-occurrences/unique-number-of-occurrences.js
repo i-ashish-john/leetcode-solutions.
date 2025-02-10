@@ -3,21 +3,14 @@
  * @return {boolean}
  */
 var uniqueOccurrences = function(arr) {
-    let map = new Map();
-    let x=0;
-    let res = new Array();
-    for(let i=0; i<arr.length; i++) {
-        if(!map.has(arr[i])) {
-            map.set(arr[i], x);
-            res[x] = 1;
-            x++;
-        } else {
-            res[map.get(arr[i])] +=1;
-        }
-    }
-    let check = [];
-    check.splice(0, 0, ...new Set(res));
-    console.log(res);
-    console.log(check);
-    return check.join('') == res.join('');
+    let map = new Map(),result =[]
+    arr.forEach(item=>{
+        map.set(item,(map.get(item)||0)+1)
+    })
+    // for(let c of map){
+    //   let a =  Object.values(c)
+    //  result.push(a)
+    // }
+  let count =   Array.from(map.values())
+   return count.length === new Set(count).size
 };
