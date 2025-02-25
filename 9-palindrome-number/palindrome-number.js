@@ -2,14 +2,17 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function (x) {
-
-    if (x < 0) {
-        // Negative numbers are not palindromes
-        return false;
+var isPalindrome = function(x) {
+    x = String(x).split('')
+    let start=0,end = x.length-1
+    if(x[start]!==x[end]) return false
+    while(start<=end){
+        if(x[start] === x[end]){
+            start++
+            end--
+        }else{
+            return false
+        }
     }
-    const originalString = String(x);
-    const reversedString = originalString.split('').reverse().join('');
-
-    return originalString === reversedString;
+    return true
 };
