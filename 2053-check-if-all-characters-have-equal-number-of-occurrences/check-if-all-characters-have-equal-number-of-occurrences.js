@@ -3,10 +3,15 @@
  * @return {boolean}
  */
 var areOccurrencesEqual = function(s) {
-    let check = {}
+    let map = new Map()
     for(let char of s){
-        check[char] = (check[char]||0)+1
+        if(map.has(char)){
+            map.set(char,map.get(char)+1)
+        }else{
+            map.set(char,1)
+        }
     }
-    let values = Object.values(check)
-    return new Set(values).size==1
+    let freq =  new Set(map.values())
+
+    return freq.size === 1
 };
