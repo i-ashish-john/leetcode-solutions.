@@ -10,3 +10,4 @@ var findDuplicate = function(nums) {
     }
     return nums[slow]
 };
+
