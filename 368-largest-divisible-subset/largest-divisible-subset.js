@@ -12,6 +12,7 @@ var largestDivisibleSubset = function(nums) {
             }
         }
     }
+        // console.log(dp)
     return dp.reduce((a, b) => (a.length > b.length ? a : b));
  
 };
