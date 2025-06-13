@@ -10,7 +10,7 @@ var groupAnagrams = function(strs) {
         MAP[sorted] = []
     }
         MAP[sorted].push(word);
-
+ 
     // console.log(MAP)
 
 }
