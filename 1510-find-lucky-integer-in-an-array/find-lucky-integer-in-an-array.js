@@ -3,18 +3,20 @@
  * @return {number}
  */
 var findLucky = function(arr) {
-  const mymap = new Map()
-  arr.forEach((element)=>{
-    mymap.set(element,(mymap.has(element)?mymap.get(element)+1:1))
-  })
-  
-let largestLucky = -1
- for(let [key,val] of mymap){
-     if(key == val){
-        largestLucky = Math.max(largestLucky,key)
-     }
- }
- return largestLucky
+    let count = {};
 
- }
+    for (let num of arr) {
+        count[num] = (count[num] || 0) + 1;
+    }
 
+    let maxLucky = -1;
+
+    for (let num in count) {
+        num = Number(num);
+        if (count[num] === num) {
+            maxLucky = Math.max(maxLucky, num);
+        }
+    }
+
+    return maxLucky;
+};
