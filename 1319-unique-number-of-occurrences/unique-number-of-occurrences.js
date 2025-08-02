@@ -3,14 +3,20 @@
  * @return {boolean}
  */
 var uniqueOccurrences = function(arr) {
-    let map = new Map(),result =[]
-    arr.forEach(item=>{
-        map.set(item,(map.get(item)||0)+1)
-    })
-    // for(let c of map){
-    //   let a =  Object.values(c)
-    //  result.push(a)
-    // }
-  let count =   Array.from(map.values())
-   return count.length === new Set(count).size
+    let obj ={};
+    for(let char of arr){
+        if(!obj[char]){
+            obj[char]=1
+        }else{
+            obj[char]++
+        }
+    }
+   let a  = Object.values(obj).sort((a,b)=>a-b)
+   for(let i = 0 ; i< a.length ; i++){
+        if(a[i]==a[i+1]||a[i]==a[i-1]){
+            return false
+        }
+
+   }
+   return true
 };
