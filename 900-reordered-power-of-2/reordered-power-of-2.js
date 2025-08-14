@@ -17,6 +17,6 @@ function sorting(n){
     const numstr = n.toString().split('')
     console.log(numstr)
     const res = numstr.sort().join('')
-    
+    console.log(res)
     return res
 }
