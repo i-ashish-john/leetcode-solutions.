@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var checkOnesSegment = function(s) {
+    
     let hasSeenZero = false;
     
     for (let char of s) {
